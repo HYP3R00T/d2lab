@@ -1,0 +1,77 @@
+vars: {
+  d2-config: {
+    # dark-theme-id: 200
+    theme-id: 101
+    sketch: true
+    layout-engine: elk
+  }
+}
+
+direction: right
+
+classes: {
+  edge_default: {
+    style.animated: true
+    style.stroke: black
+  }
+}
+
+rootaccount: {
+  shape: image
+  label: "Root Account"
+  icon: https://icons.terrastruct.com/aws%2FManagement%20&%20Governance%2FAWS-Organizations_Account_light-bg.svg
+}
+
+root: {
+  icon: https://icons.terrastruct.com/aws%2FManagement%20&%20Governance%2FAWS-Organizations.svg
+  icon.near: top-left
+  label: "Root OU (AWS Organizations)"
+  label.near: outside-top-center
+  shape: rectangle
+  style.fill: transparent
+  style.fill-pattern: none
+  style.stroke: black
+
+  memberou: {
+    icon: https://icons.terrastruct.com/aws%2FManagement%20&%20Governance%2FAWS-Organizations.svg
+    label: "Member OU"
+    shape: image
+  }
+
+  submemberou1: {
+    icon: https://icons.terrastruct.com/aws%2FManagement%20&%20Governance%2FAWS-Organizations.svg
+    label: "Member OU 1"
+    shape: image
+  }
+
+  submemberou2: {
+    icon: https://icons.terrastruct.com/aws%2FManagement%20&%20Governance%2FAWS-Organizations.svg
+    label: "Member OU 2"
+    shape: image
+  }
+
+  account1: {
+    icon: https://icons.terrastruct.com/aws%2FManagement%20&%20Governance%2FAWS-Organizations_Account_light-bg.svg
+    label: "Account 1"
+    shape: image
+  }
+
+  account2: {
+    icon: https://icons.terrastruct.com/aws%2FManagement%20&%20Governance%2FAWS-Organizations_Account_light-bg.svg
+    label: "Account 2"
+    shape: image
+  }
+
+  account3: {
+    icon: https://icons.terrastruct.com/aws%2FManagement%20&%20Governance%2FAWS-Organizations_Account_light-bg.svg
+    label: "Management Account"
+    shape: image
+  }
+}
+
+rootaccount -> root: {class: edge_default}
+root.memberou -> root.account3: {class: edge_default}
+root.memberou -> root.submemberou1: {class: edge_default}
+root.memberou -> root.submemberou2: {class: edge_default}
+root.submemberou1 -> root.account1: {class: edge_default}
+root.submemberou2 -> root.account2: {class: edge_default}

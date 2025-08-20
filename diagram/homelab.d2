@@ -1,0 +1,26 @@
+vars: {
+  d2-config: {
+    dark-theme-id: 200
+    sketch: true
+    layout-engine: elk
+  }
+}
+
+direction: down
+
+lb: "lb" {
+  shape: image
+  icon: https://icon.icepanel.io/AWS/svg/Networking-Content-Delivery/Elastic-Load-Balancing.svg
+}
+
+ec2: "internet" {
+  shape: image
+  icon: https://icons.terrastruct.com/aws%2FCompute%2FAmazon-EC2_light-bg.svg
+}
+
+db: "db" {
+  shape: image
+  icon: https://icons.terrastruct.com/aws%2FDatabase%2FAmazon-RDS.svg
+}
+
+lb -> ec2 <-> db
