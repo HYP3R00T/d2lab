@@ -1,4 +1,4 @@
-# d2lab]
+# d2lab
 
 Small, focused repo for authoring D2 diagrams. Sources live in `diagram/` and exports (PNG/SVG) are written to `output/` via a small script and a `mise` watch task.
 
