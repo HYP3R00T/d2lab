@@ -2,6 +2,17 @@
 
 Small, focused repo for authoring D2 diagrams. Sources live in `diagram/` and exports (PNG/SVG) are written to `output/` via a small script and a `mise` watch task.
 
+## Icon Set
+
+- [Kubernetes Icons](https://github.com/kubernetes/kubernetes/tree/master/logo)
+- [AWS Icons](https://aws-icons.com/)
+- [Azure Icons](https://az-icons.com/)
+- [GCP Icons](https://gcpicons.com/)
+- [IBM Icons](https://github.com/IBM-Cloud/architecture-icons)
+- [Dashboard Icons (dashboardicons)](https://dashboardicons.com/)
+- [Dashboard Icons (selfh.st)](https://selfh.st/icons/)
+- [Software Architecture Diagram Icons](https://icons.terrastruct.com/)
+
 ## Quick start (Dev Container)
 
 Prereqs: Docker + VS Code.
