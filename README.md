@@ -25,7 +25,7 @@ Prereqs: Docker + VS Code.
 mise run watch ./path/to/diagram
 ```
 
-Exports land in `./output/homelab.png` and `./output/homelab.svg`.
+Exports land in `./output/diagram.png` and `./output/diagram.svg`.
 
 ## Local setup (without Dev Container)
 
