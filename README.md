@@ -4,7 +4,7 @@ Small, focused repo for authoring D2 diagrams. Sources live in `diagram/` and ex
 
 ## Icon Set
 
-- [Kubernetes Icons](https://github.com/kubernetes/kubernetes/tree/master/logo)
+- [Kubernetes Icons](https://github.com/kubernetes/community/tree/master/icons)
 - [AWS Icons](https://aws-icons.com/)
 - [Azure Icons](https://az-icons.com/)
 - [GCP Icons](https://gcpicons.com/)
