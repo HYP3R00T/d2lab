@@ -5,5 +5,3 @@ node = "lts"
 [tasks.watch]
 description = "Watch .d2 and auto-generate sketch diagram"
 run = "watchexec -e d2 --restart --clear -- zsh ./scripts/d2_to_output.zsh $1"
-# run = "watchexec -e d2 --restart --clear -- d2 ./diagram/homelab.d2 ./output/homelab.svg"
-# run = "watchexec -e d2 --restart --clear --  d2 --sketch=true ./diagram/homelab.d2 ./output/homelab.svg"
