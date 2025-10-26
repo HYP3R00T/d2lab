@@ -1,5 +1,5 @@
 {
-    "name": "awsbreaker",
+    "name": "d2lab",
     "build": {
         "context": ".",
         "dockerfile": "Dockerfile"
