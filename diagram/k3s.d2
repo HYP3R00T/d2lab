@@ -1,0 +1,89 @@
+vars: {
+  d2-config: {
+    # dark-theme-id: 200
+    theme-id: 101
+    # theme-id: 5
+    # sketch: true
+    layout-engine: elk
+    pad: 25
+  }
+}
+
+direction: right
+
+classes: {
+  edge_default: {
+    style.animated: true
+    # style.stroke: black
+  }
+}
+
+classes: {
+  default: {
+    style: {
+      border-radius: 8
+      fill: transparent
+      stroke-width: 1
+    }
+  }
+}
+
+proxmox: {
+  shape: rectangle
+  label: "Proxmox"
+  icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/proxmox.png
+  class: default
+
+  vm1: {
+    shape: rectangle
+    label: "VM1 (Ubuntu)"
+    icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/ubuntu-linux.svg
+    class: default
+
+    kubernetes: {
+      shape: rectangle
+      label: "Kubernetes (k3s)"
+      icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/kubernetes.svg
+      class: default
+
+      apps: {
+        label: Apps
+        class: default
+
+        linkding: {
+          shape: image
+          label: Linkding
+          icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/linkding.svg
+        }
+
+        mealie: {
+          shape: image
+          label: Mealie
+          icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/mealie.svg
+        }
+      }
+
+      vault: {
+        # shape: image
+        label: HashiCorp Vault
+        icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/hashicorp-vault.svg
+        class: default
+      }
+    }
+  }
+
+  vm2: {
+    shape: rectangle
+    label: "VM2 (Arch)"
+    icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/ubuntu-linux.svg
+    class: default
+  }
+}
+
+cloudflare: {
+  shape: image
+  label: "Cloudflared"
+  icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/cloudflare.svg
+}
+
+cloudflare -> proxmox.vm1.kubernetes.apps: {class: edge_default}
