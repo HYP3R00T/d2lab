@@ -1,0 +1,37 @@
+vars: {
+  d2-config: {
+    # dark-theme-id: 200
+    # theme-id: 101
+    theme-id: 200
+    # sketch: true
+    layout-engine: elk
+    pad: 25
+  }
+}
+
+direction: right
+
+apps: {
+  label: ""
+  style.fill: transparent
+
+  vscode: {
+    shape: image
+    label: "vscode"
+    icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/vscode.svg
+  }
+
+  docker: {
+    shape: image
+    label: "docker"
+    icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/docker.svg
+  }
+}
+
+d2lang: {
+  shape: image
+  label: "d2lang"
+  icon: https://icons.terrastruct.com/assets/icons/d2-logo.svg
+}
+
+apps -> d2lang
