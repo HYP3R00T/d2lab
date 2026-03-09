@@ -1,0 +1,135 @@
+vars: {
+  d2-config: {
+    # dark-theme-id: 200
+    theme-id: 101
+    # theme-id: 5
+    # sketch: true
+    layout-engine: elk
+    pad: 50
+  }
+}
+
+direction: right
+
+classes: {
+  edge_default: {
+    style.animated: true
+    style.bold: true
+    style.stroke: black
+    style.fill: black
+    style.font-color: white
+  }
+}
+
+classes: {
+  default: {
+    style: {
+      border-radius: 8
+      fill: transparent
+      stroke-width: 1
+    }
+  }
+}
+
+internet: {
+  shape: image
+  label: "Internet"
+  icon: https://icons.terrastruct.com/essentials%2F140-internet.svg
+  class: default
+}
+
+computer: {
+  shape: image
+  label: "Terminal"
+  icon: https://icons.terrastruct.com/tech%2Flaptop.svg
+  class: default
+}
+
+region: {
+  shape: rectangle
+  label: "Region (us-east-1)"
+  icon: https://icons.terrastruct.com/aws%2F_Group%20Icons%2FRegion_light-bg.svg
+  class: default
+
+  s3: {
+    shape: image
+    label: "Batchfactory Bucket"
+    icon: https://icon.icepanel.io/AWS/svg/Storage/Simple-Storage-Service.svg
+    class: default
+  }
+
+  validator: {
+    shape: image
+    label: "Validator"
+    icon: https://icon.icepanel.io/AWS/svg/Compute/Lambda.svg
+    class: default
+  }
+
+  processor: {
+    shape: image
+    label: "Processor"
+    icon: https://icon.icepanel.io/AWS/svg/Compute/Lambda.svg
+    class: default
+  }
+
+  api_reader: {
+    shape: image
+    label: "API Reader"
+    icon: https://icon.icepanel.io/AWS/svg/Compute/Lambda.svg
+    class: default
+  }
+
+  ddb: {
+    shape: image
+    label: "Jobs Table"
+    icon: https://icon.icepanel.io/AWS/svg/Database/DynamoDB.svg
+    class: default
+  }
+
+  sqs: {
+    shape: image
+    label: "SQS"
+    icon: https://icon.icepanel.io/AWS/svg/App-Integration/Simple-Queue-Service.svg
+    class: default
+  }
+
+  apigw: {
+    shape: image
+    label: "API Gateway V2"
+    icon: https://icon.icepanel.io/AWS/svg/App-Integration/API-Gateway.svg
+    class: default
+  }
+}
+
+computer -> region.s3: {
+  label: "    Push CSV to Uploads    "
+  class: edge_default
+}
+region.s3 -> region.validator: {
+  label: "    Trigger    "
+  class: edge_default
+}
+
+region.validator -> region.s3: {
+  label: "    Validation failed (CSV to Rejected)    "
+  class: edge_default
+}
+region.validator -> region.ddb: {
+  label: "    Validation failed (Update Jobs Table)    "
+  class: edge_default
+}
+region.validator -> region.sqs: {
+  label: "    Validation passed    "
+  class: edge_default
+}
+
+region.sqs -> region.processor: {class: edge_default}
+region.processor -> region.ddb: {class: edge_default}
+region.processor -> region.s3: {
+  label: "    JSON to Processed    "
+  class: edge_default
+}
+
+internet -> region.apigw: {class: edge_default}
+region.apigw -> region.api_reader: {class: edge_default}
+region.api_reader -> region.ddb: {class: edge_default}
