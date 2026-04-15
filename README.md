@@ -12,6 +12,7 @@ Small, focused repo for authoring D2 diagrams. Sources live in `diagram/` and ex
 - [Dashboard Icons (dashboardicons)](https://dashboardicons.com/)
 - [Dashboard Icons (selfh.st)](https://selfh.st/icons/)
 - [Software Architecture Diagram Icons](https://icons.terrastruct.com/)
+- [CNCF Logos](https://github.com/cncf/artwork)
 
 ## Quick start (Dev Container)
 
