@@ -19,18 +19,18 @@ Small, focused repo for authoring D2 diagrams. Sources live in `diagram/` and ex
 Prereqs: Docker + VS Code.
 
 1) Open this repo in VS Code and run: "Dev Containers: Reopen in Container".
-2) The container will run `scripts/setup.sh` to install D2, Playwright (for PNG export), `watchexec`, etc.
+2) The container will run `scripts/setup.sh` to install D2 and Playwright (for PNG export).
 3) Start watching a diagram and auto-regenerate on save:
 
 ```bash
 mise run watch ./path/to/diagram
 ```
 
-Exports land in `./output/diagram.png` and `./output/diagram.svg`.
+Watch mode writes `./output/diagram.svg`.
 
 ## Local setup (without Dev Container)
 
-- Install mise: https://mise.jdx.dev
+- Install mise: <https://mise.jdx.dev>
 - Trust and install tools for this repo:
 
 ```bash
@@ -38,7 +38,7 @@ mise trust
 mise install
 ```
 
-- Install D2 CLI if not present: https://d2lang.com/tour/install
+- Install D2 CLI if not present: <https://d2lang.com/tour/install>
 - Install Playwright Chromium (required for PNG export):
 
 ```bash
@@ -51,6 +51,8 @@ Now you can use the same watch task:
 ```bash
 mise run watch ./path/to/diagram
 ```
+
+This uses D2's built-in watch mode and only computes `./output/<name>.svg` for you.
 
 ## One-off render (no watch)
 
@@ -66,4 +68,4 @@ This writes `./output/homelab.png` and `./output/homelab.svg`.
 
 If this project helps you, consider supporting it:
 
-- GitHub Sponsors: https://github.com/sponsors/HYP3R00T
+- GitHub Sponsors: <https://github.com/sponsors/HYP3R00T>

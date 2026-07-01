@@ -1,7 +1,7 @@
 [tools]
-watchexec = "latest"
 node = "lts"
+d2 = "latest"
 
 [tasks.watch]
-description = "Watch .d2 and auto-generate sketch diagram"
-run = "watchexec -e d2 --restart --clear -- zsh ./scripts/d2_to_output.zsh $1"
+description = "Watch .d2 and auto-generate SVG in output/"
+run = "powershell -NoProfile -ExecutionPolicy Bypass -File .\\scripts\\d2_watch.ps1"
