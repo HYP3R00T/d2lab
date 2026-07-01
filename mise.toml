@@ -5,3 +5,7 @@ d2 = "latest"
 [tasks.watch]
 description = "Watch .d2 and auto-generate SVG in output/"
 run = "powershell -NoProfile -ExecutionPolicy Bypass -File .\\scripts\\d2_watch.ps1"
+
+[tasks.build]
+description = "Build SVG, PNG, and GIF in output/"
+run = "powershell -NoProfile -ExecutionPolicy Bypass -File .\\scripts\\d2_build.ps1"
