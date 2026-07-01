@@ -20,5 +20,7 @@ if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 & d2 $inputFile (Join-Path $outputDir "$name.png")
 if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 
-& d2 --animate-interval 1000 $inputFile (Join-Path $outputDir "$name.gif")
+# GIF export is intentionally disabled for now because D2's GIF output
+# does not preserve the SVG edge animation used by this diagram.
+# & d2 --animate-interval 1000 $inputFile (Join-Path $outputDir "$name.gif")
 exit $LASTEXITCODE

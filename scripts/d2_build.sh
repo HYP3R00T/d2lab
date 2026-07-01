@@ -17,4 +17,6 @@ mkdir -p "$output_dir"
 
 d2 "$in" "$output_dir/$name.svg"
 d2 "$in" "$output_dir/$name.png"
-d2 --animate-interval 1000 "$in" "$output_dir/$name.gif"
+# GIF export is intentionally disabled for now because D2's GIF output
+# does not preserve the SVG edge animation used by this diagram.
+# d2 --animate-interval 1000 "$in" "$output_dir/$name.gif"
